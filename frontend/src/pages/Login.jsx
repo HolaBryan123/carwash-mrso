@@ -64,7 +64,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className='w-full bg-zinc-800 border border-zinc-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition placeholder-gray-600'
-                placeholder='••••••••'
+                placeholder='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                 required
               />
             </div>
@@ -84,7 +84,7 @@ const Login = () => {
         </div>
 
         <p className='text-center text-gray-600 text-xs mt-6'>
-          Sistema de gestion interno — Solo personal autorizado
+          Sistema de gestion interno ï¿½ Solo personal autorizado
         </p>
       </div>
     </div>
