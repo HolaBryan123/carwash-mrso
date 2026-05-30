@@ -19,7 +19,7 @@ const Reportes = () => {
     }
   }
 
-  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+  const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
   return (
     <div className='p-6'>
@@ -45,12 +45,12 @@ const Reportes = () => {
               className='bg-gray-50 dark:bg-zinc-700 border border-gray-200 dark:border-zinc-600 text-gray-800 dark:text-white rounded-lg px-4 py-2.5 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition'
             >
               {meses.map((m, i) => (
-                <option key={i+1} value={i+1}>{m}</option>
+                <option key={i + 1} value={i + 1}>{m}</option>
               ))}
             </select>
           </div>
           <div>
-            <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1'>Año</label>
+            <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1'>AÃ±o</label>
             <input
               type='number'
               value={anio}
