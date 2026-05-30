@@ -1,0 +1,30 @@
+{
+  "name": "carwash-mrso-backend",
+  "version": "1.0.0",
+  "description": "Backend para plataforma de gestión del Carwash MR.SO",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "prisma migrate dev",
+    "generate": "prisma generate"
+  },
+  "keywords": [],
+  "author": "Bryan Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "prisma": "^6.19.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

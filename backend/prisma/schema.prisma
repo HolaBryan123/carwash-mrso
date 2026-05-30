@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Sucursal {
+  id        Int       @id @default(autoincrement())
+  nombre    String
+  direccion String
+  telefono  String?
+  activa    Boolean   @default(true)
+  creadoEn  DateTime  @default(now())
+  usuarios  Usuario[]
+  ingresos  Ingreso[]
+}
+
+model Usuario {
+  id         Int       @id @default(autoincrement())
+  nombre     String
+  email      String    @unique
+  password   String
+  rol        Rol       @default(OPERADOR)
+  activo     Boolean   @default(true)
+  creadoEn   DateTime  @default(now())
+  sucursalId Int?
+  sucursal   Sucursal? @relation(fields: [sucursalId], references: [id])
+  ingresos   Ingreso[]
+}
+
+model CatalogoServicio {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  descripcion String?
+  precio      Decimal   @db.Decimal(10, 2)
+  activo      Boolean   @default(true)
+  creadoEn    DateTime  @default(now())
+  ingresos    Ingreso[]
+}
+
+model Ingreso {
+  id         Int              @id @default(autoincrement())
+  placa      String
+  monto      Decimal          @db.Decimal(10, 2)
+  notas      String?
+  creadoEn   DateTime         @default(now())
+  sucursalId Int
+  sucursal   Sucursal         @relation(fields: [sucursalId], references: [id])
+  servicioId Int
+  servicio   CatalogoServicio @relation(fields: [servicioId], references: [id])
+  usuarioId  Int
+  usuario    Usuario          @relation(fields: [usuarioId], references: [id])
+}
+
+enum Rol {
+  PROPIETARIO
+  ADMINISTRADOR
+  OPERADOR
+}
