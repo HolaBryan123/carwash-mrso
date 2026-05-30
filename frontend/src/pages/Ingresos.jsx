@@ -67,7 +67,6 @@ const Ingresos = () => {
                 required
               />
             </div>
-
             <div>
               <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1'>Tipo de servicio</label>
               <select
@@ -78,11 +77,10 @@ const Ingresos = () => {
               >
                 <option value=''>Seleccionar servicio...</option>
                 {servicios.map(s => (
-                  <option key={s.id} value={s.id}>{s.nombre} — Q{s.precio}</option>
+                  <option key={s.id} value={s.id}>{s.nombre} - Q{s.precio}</option>
                 ))}
               </select>
             </div>
-
             <div>
               <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1'>Monto cobrado (Q)</label>
               <div className='relative'>
@@ -97,7 +95,6 @@ const Ingresos = () => {
                 />
               </div>
             </div>
-
             <div>
               <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1'>Notas (opcional)</label>
               <textarea
@@ -108,18 +105,16 @@ const Ingresos = () => {
                 rows={2}
               />
             </div>
-
             {mensaje && (
               <div className='bg-green-900/20 border border-green-600 text-green-500 px-4 py-3 rounded-lg text-sm font-medium'>
-                ? {mensaje}
+                {mensaje}
               </div>
             )}
             {error && (
               <div className='bg-red-900/20 border border-red-700 text-red-400 px-4 py-3 rounded-lg text-sm font-medium'>
-                ? {error}
+                {error}
               </div>
             )}
-
             <button
               type='submit'
               disabled={cargando}
@@ -137,7 +132,7 @@ const Ingresos = () => {
           </div>
           {registros.length === 0 ? (
             <div className='flex flex-col items-center justify-center h-48 text-gray-400'>
-              <span className='text-4xl mb-2'>??</span>
+              <span className='text-4xl mb-2'>ðŸš—</span>
               <p className='text-sm'>Los registros apareceran aqui</p>
             </div>
           ) : (
